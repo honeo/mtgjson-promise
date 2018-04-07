@@ -9,7 +9,6 @@
 
 ## 使い方
 ```bash
-# 未実装
 $ npm i mtgjson-promise
 ```
 ```js
@@ -25,7 +24,7 @@ const json = await mtgjsonP({
 });
 
 
-json.AKH[0].name; //
+json.AKH.cards[0].name; // "Angel of Sanctions"
 ```
 
 
