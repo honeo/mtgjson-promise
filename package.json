@@ -1,0 +1,29 @@
+{
+  "name": "mtgjson-promise",
+  "version": "1.0.0",
+  "description": "get latest mtgjson",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e \"throw new Error('(>_<)')\""
+  },
+  "author": "honeo",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^5.0.0",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/honeo/mtgjson-promise.git"
+  },
+  "keywords": [
+    "mtg",
+    "mtgjson",
+    "promise"
+  ],
+  "bugs": {
+    "url": "https://github.com/honeo/mtgjson-promise/issues"
+  },
+  "homepage": "https://github.com/honeo/mtgjson-promise#readme"
+}
