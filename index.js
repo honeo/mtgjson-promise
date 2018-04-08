@@ -21,17 +21,26 @@ async function mtgjsonXP(_options={}){
 
 	const options = Object.assign({}, options_default, _options)
 
-	await fse.ensureDir('./cache/');
+	await fse.ensureDir(
+		path.join(__dirname, 'cache')
+	);
 	const filename = options.extra ?
 		filename_extra:
 		filename_normal;
 	const hasCacheFile = Promise.all([
-		fse.exists(`./cache/${filename}.etag`),
-		fse.exists(`./cache/${filename}`)
+		fse.exists(
+			path.join(__dirname, `cache/${filename}.etag`)
+		),
+		fse.exists(
+			path.join(__dirname, `cache/${filename}`)
+		)
 	]).then( (bool1, bool2)=>{
 		return bool1 && bool2
 	});
-	const etag_cache = await fse.readFile(`./cache/${filename}.etag`, 'utf8').catch( (error)=>{
+	const etag_cache = await fse.readFile(
+		path.join(__dirname, `cache/${filename}.etag`),
+		'utf8'
+	).catch( (error)=>{
 		return "null";
 	});
 
@@ -42,16 +51,22 @@ async function mtgjsonXP(_options={}){
 	});
 	const etag_server = response.headers.get('etag');
 	if( hasCacheFile && etag_server===etag_cache ){
-		return fse.readJson(`./cache/${filename}`);
+		return fse.readJson(
+			path.join(__dirname, `cache/${filename}`)
+		);
 	}else{
-		await fse.writeFile(`./cache/${filename}.etag`, etag_server, {
-			encoding: 'utf8',
-			flag: 'w'
+		await fse.writeFile(
+			path.join(__dirname, `cache/${filename}.etag`),
+			etag_server, {
+				encoding: 'utf8',
+				flag: 'w'
 		});
 		const json = await response.json(); // 超重い
-		await fse.writeJson(`./cache/${filename}`, json, {
-			encoding: 'utf8',
-			flag: 'w'
+		await fse.writeJson(
+			path.join(__dirname, `cache/${filename}`),
+			json, {
+				encoding: 'utf8',
+				flag: 'w'
 		});
 		return json;
 	}
