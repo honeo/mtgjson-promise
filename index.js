@@ -49,11 +49,16 @@ async function mtgjsonXP(_options={}){
 			'if-none-match': etag_cache
 		}
 	});
+
 	const etag_server = response.headers.get('etag');
 	if( hasCacheFile && etag_server===etag_cache ){
-		return fse.readJson(
+		const json = await fse.readJson(
 			path.join(__dirname, `cache/${filename}`)
 		);
+		return {
+			data: json,
+			etag: etag_server
+		}
 	}else{
 		await fse.writeFile(
 			path.join(__dirname, `cache/${filename}.etag`),
@@ -68,7 +73,10 @@ async function mtgjsonXP(_options={}){
 				encoding: 'utf8',
 				flag: 'w'
 		});
-		return json;
+		return {
+			data: json,
+			etag: etag_server
+		}
 	}
 }
 

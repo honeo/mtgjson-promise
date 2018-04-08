@@ -16,15 +16,15 @@ const mtgjsonP = require('mtgjson-promise');
 
 
 // AllSets.json
-const json = await mtgjsonP();
+const {data, etag} = await mtgjsonP();
 
 // or AllSets-x.json
-const json = await mtgjsonP({
+const {data, etag} = await mtgjsonP({
 	extra: true
 });
 
 
-json.AKH.cards[0].name; // "Angel of Sanctions"
+data.AKH.cards[0].name; // "Angel of Sanctions"
 ```
 
 
