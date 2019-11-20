@@ -4,7 +4,7 @@
   "description": "get latest mtgjson",
   "main": "index.js",
   "scripts": {
-    "test": "node -e \"throw new Error('(>_<)')\""
+    "test": "node ./test/index.js"
   },
   "author": "honeo",
   "license": "MIT",

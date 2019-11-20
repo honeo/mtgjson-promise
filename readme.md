@@ -5,6 +5,7 @@
 
 ## なにこれ
 [MTG JSON](http://mtgjson.com/)で配布されている最新の.jsonファイルを取得・パースしてObjectで返す。  
+ｖ4.6.0で動作確認。
 
 
 ## 使い方
@@ -15,17 +16,23 @@ $ npm i mtgjson-promise
 const mtgjsonP = require('mtgjson-promise');
 
 
-// AllSets.json
-const {data, etag} = await mtgjsonP();
+// get: AllPrintings.json
+const {data, etag} = await mtgjsonP.AllPrintings();
 
-// or AllSets-x.json
-const {data, etag} = await mtgjsonP({
-	extra: true
-});
-
-
-data.AKH.cards[0].name; // "Angel of Sanctions"
+data.ELD.cards[269].name; // "Oko, Thief of Crowns"
 ```
+
+
+## API
+取得対象のファイルはconfig.jsonを参照。  
+書庫ファイルには未対応。
+
+
+## ChangeLog
+
+### v2 => v3
+MTGJSONの仕様変更に対応。  
+APIを取得ファイルごとのメソッドに変更。
 
 
 ## Respect

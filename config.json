@@ -1,0 +1,95 @@
+{
+	"base": "https://www.mtgjson.com/files/",
+
+	"files": {
+		"AllPrintings": {
+			"isArchive": false,
+			"name": "AllPrintings.json"
+		},
+		"AllDeckFiles": {
+			"isArchive:": true,
+			"name": "AllDeckFiles.zip"
+		},
+		"AllPrices": {
+			"isArchive": false,
+			"name": "AllPrices.json"
+		},
+		"AllSetFiles": {
+			"isArchive": true,
+			"name": "AllSetFiles.zip"
+		},
+		"AllCards": {
+			"isArchive": false,
+			"name": "AllCards.json"
+		},
+		"CardTypes": {
+			"isArchive": false,
+			"name": "CardTypes.json"
+		},
+		"CompiledList": {
+			"isArchive": false,
+			"name": "CompiledList.json"
+		},
+		"DeckLists": {
+			"isArchive": false,
+			"name": "DeckLists.json"
+		},
+		"Keywords": {
+			"isArchive": false,
+			"name": "Keywords.json"
+		},
+		"LegacyCards": {
+			"isArchive": false,
+			"name": "LegacyCards.json"
+		},
+		"LegacyPrintings": {
+			"isArchive": false,
+			"name": "LegacyPrintings.json"
+		},
+		"PauperCards": {
+			"name": "PauperCards.json",
+			"isArchive": false
+		},
+		"PioneerCards": {
+			"name": "PioneerCards.json",
+			"isArchive": false
+		},
+		"PioneerPrintings": {
+			"name": "PioneerPrintings.json",
+			"isArchive": false
+		},
+		"ModernCards": {
+			"name": "ModernCards.json",
+			"isArchive": false
+		},
+		"ModernPrintings": {
+			"name": "ModernPrintings.json",
+			"isArchive": false
+		},
+		"SetList": {
+			"name": "SetList.json",
+			"isArchive": false
+		},
+		"StandardCards": {
+			"name": "StandardCards.json",
+			"isArchive": false
+		},
+
+		"StandardPrintings": {
+			"name": "StandardPrintings.json",
+			"isArchive": false
+		},
+		"version": {
+			"name": "version.json",
+			"isArchive": false
+		},
+		"VintageCards": {
+			"name": "VintageCards.json",
+			"isArchive": false
+		},
+		"VintagePrintings": {
+			"isArchive": false,
+			"name": "StandardCards.json"
+		}
+	}
+}
